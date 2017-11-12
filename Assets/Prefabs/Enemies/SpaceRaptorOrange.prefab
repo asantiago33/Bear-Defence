@@ -1161,10 +1161,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 10
-  startHealth: 200
-  cost: 100
-  chanceOfDrop: 75
+  startHealth: 100
+  cost: 50
+  chanceOfDrop: 50
   attackRange: 2
+  dropValue: 10
   healthBar: {fileID: 114534541154993850}
   drop: {fileID: 1757852001638476, guid: f4e506a5a13b24c87bd0253830989b29, type: 2}
   offSet: {x: 0, y: 2, z: 0}

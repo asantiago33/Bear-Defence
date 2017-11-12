@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 82075069655576878}
   - component: {fileID: 114336600009931074}
   - component: {fileID: 114980935023135712}
+  - component: {fileID: 114634799533074580}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -54,7 +55,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cd935f55df77b4a3fb9a8af76cbd58c4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.29
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -142,6 +143,18 @@ MonoBehaviour:
   xOffset: 3.5
   yOffset: 1
   zOffset: 3.5
+--- !u!114 &114634799533074580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1710326008497936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65eceb88413343f68a01d9dd27e182b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tex: {fileID: 0}
 --- !u!114 &114930224288194412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -162,7 +175,10 @@ MonoBehaviour:
   player: {fileID: 0}
   enemyArray:
     enemies:
-    - {fileID: 1249641632723556, guid: d42ec435879c340ea87bf908c96f9627, type: 2}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   buildings:
     buildingsArray:
     - {fileID: 1285507479562686, guid: ae60d564574944cc2882defd97d2942f, type: 2}
@@ -171,6 +187,9 @@ MonoBehaviour:
   playerCurrencyText: {fileID: 0}
   selectionMenu: {fileID: 0}
   gameOverPanel: {fileID: 0}
+  gameOverRoundText: {fileID: 0}
+  turretPanel: {fileID: 0}
+  roundNumber: 0
   tiles: {fileID: 0}
 --- !u!114 &114980935023135712
 MonoBehaviour:
@@ -184,4 +203,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   building: {fileID: 1285507479562686, guid: ae60d564574944cc2882defd97d2942f, type: 2}
+  Lazer: {fileID: 1864469294501768, guid: e4e6656053ce74267afa7e76a762b02f, type: 2}
+  Blaster: {fileID: 1794993141861402, guid: 263df216f96d54a06b28c3d3dfcbd2ba, type: 2}
+  Dturret: {fileID: 1533040035325458, guid: 11078b7844d65b244ba69a876fec855b, type: 2}
+  simpleTurret: {fileID: 0}
+  LazerImage: {fileID: 0}
+  BlasterImage: {fileID: 0}
+  DturretImage: {fileID: 0}
+  isPaused: 0
+  selectedColor: {r: 0.781, g: 0.781, b: 0.781, a: 0.497}
   offset: {x: 0, y: 0.65, z: 0}
