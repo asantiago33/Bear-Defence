@@ -9,8 +9,9 @@ public class Player : MonoBehaviour {
 	[Header("Player Attributes")]
 	public float speed;
 	public float startHealth;
+    public float healPerSecond = 5f;
 
-	[Header("Player References")]
+    [Header("Player References")]
 	public Transform holdPosition;
 	public Image healthBar;
 	public GameObject building;
@@ -41,9 +42,11 @@ public class Player : MonoBehaviour {
 	[Header("Timers")]
 	public float startPickUpTimer = 1f;
 	public float startBuildTimer = 1f;
+    public float startHealTimer = 1f;
 
 	private float pickupTimer;
 	private float buildTimer;
+    private float healTimer;
 
 	void Awake() {
 		floorMask = LayerMask.GetMask ("Floor");
@@ -83,7 +86,7 @@ public class Player : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetKeyDown(KeyCode.F) & buildTimer <= 0f) {
+		if (Input.GetKeyDown(KeyCode.F) && buildTimer <= 0f) {
 			//Build ();
 			if (tile != null) {
 				//GameManager.instance.Build1 (tile);
@@ -91,9 +94,15 @@ public class Player : MonoBehaviour {
 			}
 			buildTimer = startBuildTimer;
 		}
-			
+
+        if (healTimer <= 0f)
+        {
+            healTimer = startHealTimer;
+            Damage(-healPerSecond);
+        }
 
 
+        healTimer -= Time.deltaTime;
 		buildTimer -= Time.deltaTime;
 		pickupTimer -= Time.deltaTime;
 	}
@@ -163,6 +172,11 @@ public class Player : MonoBehaviour {
 	public void Damage(float damage) {
 		health -= damage;
 		header.GetComponent<Animator> ().SetTrigger ("TakeDamage");
+
+        if (health >= 100f)
+        {
+            health = 100f;
+        }
 
 		if (health <= 0f) {
 			GameManager.instance.SetIsDead (true);
