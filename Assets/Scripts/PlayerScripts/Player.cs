@@ -58,7 +58,7 @@ public class Player : MonoBehaviour {
 	void FixedUpdate() {
 		float horizontal = Input.GetAxisRaw ("Horizontal");
 		float vertical = Input.GetAxisRaw ("Vertical");
-		swing = Input.GetKeyDown(KeyCode.Space);
+		swing = Input.GetKey(KeyCode.Space);
 
 		Move (horizontal, vertical);
 		Turn ();

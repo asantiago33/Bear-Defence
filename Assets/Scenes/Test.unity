@@ -1201,7 +1201,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4847208452123340, guid: 590f0361f98c6fb4a958cc780d3f9c58, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 114180082825379968, guid: 590f0361f98c6fb4a958cc780d3f9c58,
         type: 2}
@@ -2516,7 +2516,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &1341602472 stripped
 SkinnedMeshRenderer:
@@ -2750,6 +2750,30 @@ Prefab:
       propertyPath: DturretImage
       value: 
       objectReference: {fileID: 1471719566}
+    - target: {fileID: 114930224288194412, guid: 425412b6228484cb7aec286b144eab28,
+        type: 2}
+      propertyPath: enemyArray.enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 1627213696829622, guid: 1e38b04f0bc6bb84e8cae15b5697f6da,
+        type: 2}
+    - target: {fileID: 114930224288194412, guid: 425412b6228484cb7aec286b144eab28,
+        type: 2}
+      propertyPath: enemyArray.enemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 1484239196169746, guid: 8801fb1016480c14ca1a4c6916ac8dc8,
+        type: 2}
+    - target: {fileID: 114930224288194412, guid: 425412b6228484cb7aec286b144eab28,
+        type: 2}
+      propertyPath: enemyArray.enemies.Array.data[2]
+      value: 
+      objectReference: {fileID: 1667426380841976, guid: c6027769e59d64d49ac01d2aba49fe82,
+        type: 2}
+    - target: {fileID: 114930224288194412, guid: 425412b6228484cb7aec286b144eab28,
+        type: 2}
+      propertyPath: enemyArray.enemies.Array.data[3]
+      value: 
+      objectReference: {fileID: 1413055922987992, guid: a2296845d724c864ba0c5c6e8695ffed,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 425412b6228484cb7aec286b144eab28, type: 2}
   m_IsPrefabParent: 0
@@ -2901,6 +2925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   startHealth: 100
+  healPerSecond: 5
   holdPosition: {fileID: 1053771289}
   healthBar: {fileID: 1217064241}
   building: {fileID: 1864469294501768, guid: e4e6656053ce74267afa7e76a762b02f, type: 2}
@@ -2908,6 +2933,7 @@ MonoBehaviour:
   renderer: {fileID: 1341602472}
   startPickUpTimer: 0.2
   startBuildTimer: 0.2
+  startHealTimer: 5
 --- !u!136 &1602702118
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3157,7 +3183,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4040232404761192, guid: e5a0831a1ec8f4f899c185b04509e843, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5a0831a1ec8f4f899c185b04509e843, type: 2}
@@ -3189,7 +3215,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1797705690
 MonoBehaviour:
@@ -3298,7 +3324,7 @@ RectTransform:
   - {fileID: 58276702}
   - {fileID: 1993559852}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3537,7 +3563,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1985375615
 Prefab:
