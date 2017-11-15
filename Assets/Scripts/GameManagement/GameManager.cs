@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject turretPanel;
 
 	private AudioSource gameMusic;
+	private bool clearedTiles;
 
 	private float enemyCurrentCurrency;
 	public int roundNumber = 0;
@@ -74,6 +75,10 @@ public class GameManager : MonoBehaviour {
 
 	void Update() {
 		if (roundStarted) {
+			if (!clearedTiles) {
+				player.GetComponent<TileHighlightController> ().ClearTilesHighlights ();
+				clearedTiles = true;
+			}
 			turretPanel.SetActive (false);
 			timer -= Time.deltaTime;
 			if (timer <= 0f && enemyCurrentCurrency > 0f) {
@@ -89,6 +94,9 @@ public class GameManager : MonoBehaviour {
 		}
 
 		if (!roundStarted) {
+			if (clearedTiles) {
+				clearedTiles = false;
+			}
             tiles.SetActive (true);
             turretPanel.SetActive (true);
             timeBuildPhase_ -= Time.deltaTime;

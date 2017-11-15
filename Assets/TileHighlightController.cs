@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class TileHighlightController : MonoBehaviour {
 
-	BoxCollider bc;
+	//BoxCollider bc;
 	List<GameObject> tiles = new List<GameObject>();
 
 	// Use this for initialization
 	void Start () {
-		bc = GetComponent<BoxCollider> ();
 		//coroutine = DumpTiles(5f);
 		//StartCoroutine(coroutine);
 	}
@@ -20,10 +19,17 @@ public class TileHighlightController : MonoBehaviour {
 	void UnHighlight(GameObject tile) {
 		tile.GetComponent<TileSelectController> ().isHighlighted = false;
 	}
+
+	public void ClearTilesHighlights() {
+		foreach (GameObject tile in tiles) {
+			tile.GetComponent<SpriteRenderer> ().enabled = false;
+		}
+	}
 	
 	void OnTriggerEnter(Collider col) {
 		GameObject go = col.gameObject;
 		if (go.CompareTag("Tile")) {
+			tiles.Add (go);
 			go.GetComponent<SpriteRenderer> ().enabled = true;
 			Highlight (go);
 		}
@@ -41,7 +47,7 @@ public class TileHighlightController : MonoBehaviour {
 		GameObject go = col.gameObject;
 		if (go.CompareTag("Tile")) {
 			go.GetComponent<SpriteRenderer> ().enabled = false;
-			tiles.Add (go);
+			tiles.Remove (go);
 			UnHighlight (go);
 		}
 	}
