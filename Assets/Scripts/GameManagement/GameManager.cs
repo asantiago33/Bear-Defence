@@ -92,7 +92,8 @@ public class GameManager : MonoBehaviour {
             tiles.SetActive (true);
             turretPanel.SetActive (true);
             timeBuildPhase_ -= Time.deltaTime;
-			roundCounter.text = timeBuildPhase_.ToString ();
+			int tbp = (int)timeBuildPhase_;
+			roundCounter.text = tbp.ToString ();
 
 			if (timeBuildPhase_ <= 0f) {
 				StartRound ();
