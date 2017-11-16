@@ -75,6 +75,9 @@ public class GameManager : MonoBehaviour {
 
 	void Update() {
 		if (roundStarted) {
+			if (startRoundButton.activeInHierarchy) {
+				startRoundButton.SetActive (false);
+			}
 			if (!clearedTiles) {
 				player.GetComponent<TileHighlightController> ().ClearTilesHighlights ();
 				clearedTiles = true;
