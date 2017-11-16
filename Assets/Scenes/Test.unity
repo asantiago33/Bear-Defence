@@ -1029,8 +1029,7 @@ MonoBehaviour:
   projectile: {fileID: 1196513729447746, guid: e5a0831a1ec8f4f899c185b04509e843, type: 2}
   FirePosition: {fileID: 1209696394}
   target: {fileID: 1068286862}
-  fireRate: 0
-  coolDown: 0
+  fireRate: 0.15
 --- !u!1 &536382442
 GameObject:
   m_ObjectHideFlags: 0
