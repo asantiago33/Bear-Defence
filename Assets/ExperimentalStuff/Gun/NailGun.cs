@@ -4,11 +4,21 @@ using UnityEngine;
 
 public class NailGun : GunBaseClass {
 
+	public float fireRate = 1f;
 
+	private float timer;
+
+	void Start() {
+		timer = fireRate;
+	}
 
 	void Update() {
+		timer -= Time.deltaTime;
 		if (Input.GetKey(KeyCode.Space)) {
-			Fire ();
+			if (timer <= 0f) {
+				Fire ();
+				timer = fireRate;
+			}
 		}
 	}
 		
