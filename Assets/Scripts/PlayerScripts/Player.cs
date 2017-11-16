@@ -95,7 +95,7 @@ public class Player : MonoBehaviour {
 			buildTimer = startBuildTimer;
 		}
 
-        if (healTimer <= 0f)
+		if (healTimer <= 0f && health < startHealth)
         {
             healTimer = startHealTimer;
             Damage(-healPerSecond);

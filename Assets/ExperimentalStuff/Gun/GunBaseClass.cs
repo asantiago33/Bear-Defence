@@ -9,9 +9,5 @@ public class GunBaseClass : MonoBehaviour {
 	public Transform FirePosition;
 	public Transform target;
 
-	[Header("Attributes")]
-	public float fireRate;
-	public float coolDown;				//<---------MAYBE
-
 
 }
