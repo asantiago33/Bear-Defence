@@ -9,6 +9,7 @@ TagManager:
   - Turret
   - EnemySpawner
   - Tile
+  - LevelAsset
   layers:
   - Default
   - TransparentFX
