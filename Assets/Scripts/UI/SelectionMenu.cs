@@ -19,14 +19,14 @@ public class SelectionMenu : MonoBehaviour {
 		if (Time.timeScale == 0) {
 			Time.timeScale = 1;
 		}
-		SceneManager.LoadScene (1);
+		SceneManager.LoadScene("MainMenuScene");
 	}
 
 	public void RestartGame() {
 		if (Time.timeScale == 0f) {
 			Time.timeScale = 1f;
 		}
-		SceneManager.LoadScene (0);
+		SceneManager.LoadScene ("Test");
 	}
 		
 
