@@ -45,29 +45,33 @@ public class BuildManager : MonoBehaviour {
 	void Update() {
 
 		if (Input.GetKeyDown(KeyCode.Alpha1)) {
-			thingThatsBuilt = building;
+			SelectSimpleTurret ();
+			/*thingThatsBuilt = building;
 			simpleTurret.color = normalColor;
 			DturretImage.color = selectedColor;
 			LazerImage.color = selectedColor;
-			BlasterImage.color = selectedColor;
+			BlasterImage.color = selectedColor;*/
 		} else if (Input.GetKeyDown(KeyCode.Alpha2)) {
-			thingThatsBuilt = Lazer;
+			SelectLazer ();
+			/*thingThatsBuilt = Lazer;
 			LazerImage.color = normalColor;
 			DturretImage.color = selectedColor;
 			simpleTurret.color = selectedColor;
-			BlasterImage.color = selectedColor;
+			BlasterImage.color = selectedColor;*/
 		} else if (Input.GetKeyDown(KeyCode.Alpha3)) {
-			thingThatsBuilt = Blaster;
+			SelectBlaster ();
+			/*thingThatsBuilt = Blaster;
 			DturretImage.color = selectedColor;
 			LazerImage.color = selectedColor;
 			simpleTurret.color = selectedColor;
-			BlasterImage.color = normalColor;
+			BlasterImage.color = normalColor;*/
 		} else if (Input.GetKeyDown(KeyCode.Alpha4)) {
-			thingThatsBuilt = Dturret;
+			SelectDTurret ();
+			/*thingThatsBuilt = Dturret;
 			DturretImage.color = normalColor;
 			LazerImage.color = selectedColor;
 			simpleTurret.color = selectedColor;
-			BlasterImage.color = selectedColor;
+			BlasterImage.color = selectedColor;*/
 		}
 
 		if (Input.GetKeyDown(KeyCode.Mouse0)) {
@@ -75,6 +79,38 @@ public class BuildManager : MonoBehaviour {
 				Build ();
 			}
 		}
+	}
+
+	public void SelectSimpleTurret() {
+		thingThatsBuilt = building;
+		simpleTurret.color = normalColor;
+		DturretImage.color = selectedColor;
+		LazerImage.color = selectedColor;
+		BlasterImage.color = selectedColor;
+	}
+
+	public void SelectLazer() {
+		thingThatsBuilt = Lazer;
+		LazerImage.color = normalColor;
+		DturretImage.color = selectedColor;
+		simpleTurret.color = selectedColor;
+		BlasterImage.color = selectedColor;
+	}
+
+	public void SelectBlaster() {
+		thingThatsBuilt = Blaster;
+		DturretImage.color = selectedColor;
+		LazerImage.color = selectedColor;
+		simpleTurret.color = selectedColor;
+		BlasterImage.color = normalColor;
+	}
+
+	public void SelectDTurret() {
+		thingThatsBuilt = Dturret;
+		DturretImage.color = normalColor;
+		LazerImage.color = selectedColor;
+		simpleTurret.color = selectedColor;
+		BlasterImage.color = selectedColor;
 	}
 
 	void Build() {
