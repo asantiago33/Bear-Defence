@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e9412470547b08c49a149fec207e0838
-timeCreated: 1510803034
+guid: 638c83b398ddca0498e4258362edf040
+timeCreated: 1510799391
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Icosphere_003
+    4300000: Cube_005
     7400000: Default Take
     9500000: //RootNode
   materials:
