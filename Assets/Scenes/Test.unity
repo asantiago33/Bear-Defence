@@ -1939,7 +1939,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1648992375012458, guid: 236f5e9deb631479e931612f263bdd37, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4750892006235814, guid: 236f5e9deb631479e931612f263bdd37, type: 2}
       propertyPath: m_LocalScale.x
@@ -1956,6 +1956,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4750892006235814, guid: 236f5e9deb631479e931612f263bdd37, type: 2}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1129878231000646, guid: 236f5e9deb631479e931612f263bdd37, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
