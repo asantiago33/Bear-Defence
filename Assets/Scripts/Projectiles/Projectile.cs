@@ -61,7 +61,11 @@ public class Projectile : MonoBehaviour {
 			Destroy (ef, 0.2f);
 			RemoveObject();
 		} else if (go.CompareTag("Turret") && isNail) {
-			go.GetComponent<Turret> ().Heal (heal);
+			if (go.GetComponent<Turret> () == null) {
+				go.GetComponent<tp> ().Heal (heal);
+			} else {
+				go.GetComponent<Turret> ().Heal (heal);
+			}
 			GameObject ef = (GameObject)Instantiate (effect, transform.position, transform.rotation);
 			Destroy (ef, 0.2f);
 			RemoveObject ();

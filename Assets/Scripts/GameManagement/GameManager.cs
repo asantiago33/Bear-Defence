@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour {
 
 		UpdateCurrency ();
 
-		if (Input.GetKeyDown(KeyCode.Tab)) {
+		if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape)) {
 			MenuSelect ();
 		}
 	}
