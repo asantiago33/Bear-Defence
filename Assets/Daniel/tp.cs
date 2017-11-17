@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class tp : PlaceableObject, IsDamageable
 {
-
     [Header("Turret Attributes")]
     public string enemyTag;
     public float range;
