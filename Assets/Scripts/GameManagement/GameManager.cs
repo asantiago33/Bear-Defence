@@ -157,7 +157,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void UpdateCurrency() {
-		playerCurrencyText.text = playerCurrency.ToString();
+		playerCurrencyText.text = "$" + playerCurrency.ToString();
 	}
 
     /*public void flushHighlights() {
