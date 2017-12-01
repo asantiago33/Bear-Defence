@@ -5,6 +5,7 @@ using UnityEngine;
 public class SolarPanel : MonoBehaviour {
 	public float radius = 10f;
 	public float chargeAmount = .1f;
+	public GameObject info1;
 
 	Transform battery;
 
@@ -14,6 +15,9 @@ public class SolarPanel : MonoBehaviour {
 
 	void Update() {
 		if (isBatteryNear ()) {
+			if (info1.activeSelf) {
+				transform.GetComponent<solarInfoTransition> ().Trns ();
+			}
 			battery.GetComponent<Battery> ().Charge (chargeAmount);
 			battery.GetComponent<Battery> ().charging = true;
 		} else {

@@ -18,7 +18,11 @@ public class Battery : InteractableObject {
 	void Start() {
 		rend = GetComponent<Renderer> ();
 		startColor = rend.material.color;
-		currentCharge = capacity;
+		float percentCharged = (currentCharge / capacity) * 100;
+		int curretChargeInt = (int)percentCharged;
+		gameObject.GetComponent<BatteryVisuals>().setCharge(curretChargeInt);
+		chargeBar.fillAmount = currentCharge / capacity;
+		//currentCharge = capacity;
 	}
 		
 
