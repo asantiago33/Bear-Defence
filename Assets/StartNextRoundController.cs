@@ -4,11 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class StartNextRoundController : MonoBehaviour {
+	public static StartNextRoundController instance = null;
+
 
 	GameObject[] turrets;
 	private Button button;
 
 	void Start() {
+		if (instance == null) {
+			instance = this;
+		} else if (instance != this) {
+			Destroy (gameObject);
+		}
 		button = gameObject.GetComponent<Button> ();
 	}
 
@@ -20,7 +27,7 @@ public class StartNextRoundController : MonoBehaviour {
 		}
 	}
 
-	int NumberOfTurrets() {
+	public int NumberOfTurrets() {
 		turrets = GameObject.FindGameObjectsWithTag ("Turret");
 		return turrets.Length;
 	}

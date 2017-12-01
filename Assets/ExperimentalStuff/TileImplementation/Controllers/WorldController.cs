@@ -11,6 +11,7 @@ public class WorldController : MonoBehaviour {
 
 	public Sprite floorSprite;
 	public Sprite selectedSprite;
+	public GameObject infoP;
 
 	GameObject tiles;
 
@@ -18,6 +19,7 @@ public class WorldController : MonoBehaviour {
 		world = new World (width, height, offset);
 		tiles = new GameObject ();
 		tiles.name = "Tiles";
+		infoP = GameObject.Find ("InfoCanvasTiles");
 
 		for (int x = 0; x < world.GetWidth(); x++) {
 			for (int y = 0; y < world.GetHeight(); y++) {
@@ -27,6 +29,7 @@ public class WorldController : MonoBehaviour {
 				SpriteRenderer spr = tileGameObject.AddComponent<SpriteRenderer> ();
 
 				TileSelectController ts = tileGameObject.AddComponent<TileSelectController> ();
+				ts.info = infoP;
 
 				ts.selectedSprite = selectedSprite;
 

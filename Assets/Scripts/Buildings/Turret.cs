@@ -120,6 +120,7 @@ public class Turret : PlaceableObject, IsDamageable {
 			if (nearestBattery.GetComponent<Battery> ().currentCharge >= 5f) {
 				isOn = true;
 				nearestBattery.GetComponent<Battery> ().Discharge (5f);
+				nearestBattery.GetComponent<InfoPanelTransition> ().infoOff = true;
 			} else {
 				isOn = false;
 			}
@@ -188,6 +189,7 @@ public class Turret : PlaceableObject, IsDamageable {
 		GameObject go = col.gameObject;
 		if (go.CompareTag("Battery")) {
 			isOn = true;
+			go.GetComponent<InfoPanelTransition> ().infoOff = true;
 		}
 	}
 
