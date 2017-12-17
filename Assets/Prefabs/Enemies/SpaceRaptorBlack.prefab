@@ -1254,6 +1254,7 @@ MonoBehaviour:
   chanceOfDrop: 100
   attackRange: 2
   dropValue: 100
+  timer_: 7
   healthBar: {fileID: 114889101679411822}
   drop: {fileID: 1757852001638476, guid: f4e506a5a13b24c87bd0253830989b29, type: 2}
   offSet: {x: 0, y: 2, z: 0}

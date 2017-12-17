@@ -14,6 +14,9 @@ public class Enemy : MonoBehaviour, IsDamageable {
 	public int chanceOfDrop;
 	public float attackRange;
     public float dropValue;
+	public float timer_ = 7f;
+
+	private float timer;
 
     [Header("References")]
 	public Image healthBar;
@@ -31,6 +34,7 @@ public class Enemy : MonoBehaviour, IsDamageable {
 	void Start () {
 		player = GameObject.Find("Bear1").transform;
 		nav = GetComponent<NavMeshAgent> ();
+		timer = timer_;
 
 		health = startHealth;
 		InvokeRepeating ("Attack", 0.0f, .5f);
@@ -38,6 +42,12 @@ public class Enemy : MonoBehaviour, IsDamageable {
 
 	// Update is called once per frame
 	void Update () {
+		timer -= Time.deltaTime;
+		Debug.Log (timer);
+		if (timer <= 0f) {
+			UpdateSpeed ();
+			timer = timer_;
+		}
 		Move ();
 
 		if (health <= 0f) {
@@ -56,6 +66,14 @@ public class Enemy : MonoBehaviour, IsDamageable {
 		}
 		nav.acceleration = 100f;
 		nav.speed = speed;
+	}
+
+	void UpdateSpeed() {
+		if (speed >= 20f) {
+			return;
+		} else {
+			speed = speed + 1f;
+		}
 	}
 
 	/*void OnTriggerEnter(Collider col) {

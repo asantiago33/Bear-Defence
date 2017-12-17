@@ -6,8 +6,13 @@ public class InfoPanel : MonoBehaviour {
 
 
 	public float baseSize = 1f;
+	private float timer = 30f;
 
 	void Update () {
+		timer -= Time.deltaTime;
+		if (timer <= 0) {
+			gameObject.SetActive (false);
+		}
 		transform.rotation = Quaternion.identity;
 		float anim = baseSize + Mathf.Sin(Time.time * 5f) * baseSize / 7f;
 		transform.localScale = Vector3.one * anim;
